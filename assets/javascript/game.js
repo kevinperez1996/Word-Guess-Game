@@ -1,3 +1,4 @@
+
 //create array of words
 var artist = ["drake", "chance", "jcole"];
 
@@ -37,7 +38,7 @@ document.getElementById("underscores").innerHTML = underScore.join(" ");
 //record user guess
 document.onkeyup = function (event) {
     var userInput = event.key;
-    
+
     //if the letter is in the word, we add the letter to "rightletter" array
     if (computerChoice.indexOf(userInput) > -1) {
         rightletter.push(userInput);
@@ -62,7 +63,7 @@ document.onkeyup = function (event) {
         }
     }
     //if the letter is not in the word we add it to the "wrong letter" array and we make sure we do not repeat used words 
-    else if (computerChoice.indexOf(userInput) < 0 && wrongletter.indexOf(userInput) < 0){
+    else if (computerChoice.indexOf(userInput) < 0 && wrongletter.indexOf(userInput) < 0) {
         wrongletter.push(userInput);
         lettersGuessed.push(userInput);
         guesses--;
@@ -74,9 +75,16 @@ document.onkeyup = function (event) {
             document.getElementById("loss-count").textContent = losses;
         }
 
+
     }
-    if (underScore.join("") === computerChoice && userInput === "Enter"){
+    if (underScore.join("") === computerChoice && userInput === "Enter") {
         alert("done");
+        function reset() {
+            document.getElementById("letters-count").innerHTML = "";
+            document.getElementById("guess-count").innerHTML = 10;
+            computerGuess.reset
+        }
+        reset();
     }
 
     //makes sure we update underscores with appropriate letters 
