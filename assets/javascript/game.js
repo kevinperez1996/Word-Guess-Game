@@ -37,6 +37,7 @@ document.getElementById("underscores").innerHTML = underScore.join(" ");
 //record user guess
 document.onkeyup = function (event) {
     var userInput = event.key;
+    
     //if the letter is in the word, we add the letter to "rightletter" array
     if (computerChoice.indexOf(userInput) > -1) {
         rightletter.push(userInput);
@@ -74,6 +75,10 @@ document.onkeyup = function (event) {
         }
 
     }
+    if (underScore.join("") === computerChoice && userInput === "Enter"){
+        alert("done");
+    }
+
     //makes sure we update underscores with appropriate letters 
     document.getElementById("underscores").innerHTML = underScore.join(" ");
 }
