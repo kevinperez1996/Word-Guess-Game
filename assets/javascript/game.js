@@ -30,6 +30,8 @@ function makeUnderscore() {
     return underScore;
 }
 console.log(makeUnderscore());
+//to add underscores in begining of game 
+document.getElementById("underscores").innerHTML = underScore.join(" ");
 
 //record user guess
 document.onkeyup = function (event) {
@@ -49,7 +51,7 @@ document.onkeyup = function (event) {
     else {
         wrongletter.push(userInput);
         lettersGuessed.push(userInput);
-        document.getElementById("letters-count").textContent = lettersGuessed;
+        document.getElementById("letters-count").textContent = " " + lettersGuessed + " ";
         console.log(lettersGuessed);
         console.log(wrongletter);
 
@@ -63,4 +65,7 @@ document.onkeyup = function (event) {
             document.getElementById("loss-count").textContent = losses;
         }
     }
+    //makes sure we update underscores with appropriate letters 
+
+    document.getElementById("underscores").innerHTML = underScore.join(" ");
 }
