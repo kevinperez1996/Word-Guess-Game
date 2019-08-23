@@ -1,10 +1,11 @@
 body {
-    background-image: url(../images/cubes.png);
+    background-image: url(../images/papyrus-dark.png);
     font-family: fantasy;
     text-transform: uppercase;
     width: 900px;
     height: 900px;
     margin: auto;
+    color: teal;
 }
 .title{
     text-align: center;
@@ -30,8 +31,8 @@ body {
     margin-bottom: 40px;
 }
 .row2{
-    border-bottom: dashed 2px black;
-    border-top: dashed 2px black;
+    border-bottom: dashed 2px teal;
+    border-top: dashed 2px teal;
     padding-top: 15px;
     margin-bottom: 5px;
 }
