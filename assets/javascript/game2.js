@@ -41,7 +41,7 @@ function reset() {
         }
         return underScore;
     }
-    console.log(makeUnderscore());
+    makeUnderscore();
 }
 reset();
 
@@ -51,34 +51,32 @@ document.onkeyup = function (event) {
     var userInput = event.key;
 
     //if the letter is in the word, we add the letter to "rightletter" array
-for (j=0; j<computerChoice.length; j++){
-    if (userInput===) {
-        underScore[j]=userInput;
-        rightletter.push(userInput);
-    
-        //replace underscore with correct letter
-        underScore[computerChoice.indexOf(userInput)] = userInput;
-        document.getElementById("underscores").innerHTML = underScore.join("");
+    for (j = 0; j < computerChoice.length; j++) {
 
-        if (underScore.join("") === computerChoice && computerChoice === "drake") {
-            document.getElementById("cover").src = "assets/images/Drake.jpg";
-            wins++;
-            document.getElementById("win-count").textContent = wins;
-            audioElement.setAttribute("src", "https://soundcloud.com/octobersveryown/drake-money-in-the-grave#t=0:15");
+        if (computerChoice.indexOf(userInput) > -1 && userInput===computerChoice[j]) {
+            rightletter.push(userInput);
+            underScore[j] = userInput;
+            document.getElementById("underscores").innerHTML = underScore.join("");
+        }
 
-        }
-        else if (underScore.join("") === computerChoice && computerChoice === "jcole") {
-            document.getElementById("cover").src = "assets/images/Jcole.jpg";
-            wins++;
-            document.getElementById("win-count").textContent = wins;
-        }
-        else if (underScore.join("") === computerChoice && computerChoice === "chane") {
-            document.getElementById("cover").src = "assets/images/Chance.jpg";
-            wins++;
-            document.getElementById("win-count").textContent = wins;
-        }
     }
-}
+    if (underScore.join("") === computerChoice && computerChoice === "drake") {
+        //document.getElementById("cover").src = "assets/images/Drake.jpg";
+        wins++;
+        document.getElementById("win-count").textContent = wins;
+
+    }
+    else if (underScore.join("") === computerChoice && computerChoice === "jcole") {
+        //document.getElementById("cover").src = "assets/images/Jcole.jpg";
+        wins++;
+        document.getElementById("win-count").textContent = wins;
+    }
+    else if (underScore.join("") === computerChoice && computerChoice === "chance") {
+        //document.getElementById("cover").src = "assets/images/Chance.jpg";
+        wins++;
+        document.getElementById("win-count").textContent = wins;
+    }
+
 
     //if the letter is not in the word we add it to the "wrong letter" array and we make sure we do not repeat used words 
     if (computerChoice.indexOf(userInput) < 0 && wrongletter.indexOf(userInput) < 0) {
